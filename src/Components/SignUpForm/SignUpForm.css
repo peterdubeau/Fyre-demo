@@ -1,0 +1,78 @@
+h1{
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.input-label{
+  font-size: 13px;
+  font-weight: 900;
+  padding-bottom: 5px;
+  padding-left: 2px;
+}
+
+input{
+  padding: 7px 3px;
+}
+
+  /* I took this directly from the actual amazon form */
+.already{
+  height: 31px;
+  padding-top: 10px;
+  background: -webkit-linear-gradient(to bottom,rgba(0,0,0,.14),rgba(0,0,0,.03) 3px,transparent);
+  background: linear-gradient(to bottom,rgba(0,0,0,.14),rgba(0,0,0,.03) 3px,transparent);
+  z-index: 0;
+  /* I took this directly from the actual amazon form */
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.already::after{
+  display: block;
+  width: 100%;
+  height: 44px;
+  background-color: transparent;
+  background: -webkit-linear-gradient(to right,#fff,rgba(255,255,255,0),#fff);
+  background: linear-gradient(to right,#fff,rgba(255,255,255,0),#fff);
+  z-index: 1;
+  content: "";
+}
+
+.input-container{
+    background-color: #fff;
+    height: 31px;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.disclaimer{
+  font-size: 13px;
+  line-height: 19px;
+  color: #111;
+  font-family: Arial,sans-serif;
+}
+
+.form-container{
+  border: 1px solid rgb(216	216	216);
+  border-radius: 5px;
+  padding: 14px 18px;
+  width: 312px;
+  height: 488px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.layout{
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-up{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
