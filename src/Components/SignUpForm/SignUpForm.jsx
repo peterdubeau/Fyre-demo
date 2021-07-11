@@ -14,13 +14,15 @@ export default function SignUpForm() {
   const [userName, setUserName] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
+
+  const [success, setSuccess] = useState(false)
 
   const [userData, setUserData] = useState({
     username: "",
     email: "",
-    password: ""
-  })
+    password: "",
+  });
   const handleChange = (e) => {
     let { name, value } = e.target;
     setFormData({
@@ -35,9 +37,9 @@ export default function SignUpForm() {
         formData.email
       )
     ) {
-      return true
+      return true;
     }
-    return false
+    return false;
   }
 
   const handleSubmit = (e) => {
@@ -45,7 +47,7 @@ export default function SignUpForm() {
 
     if (formData.username.length === 0 || formData.username === "") {
       setUserName("Enter your name");
-      setError(true)
+      setError(true);
     } else {
       setUserName("");
       setUserData({ ...userData, username: formData.username });
@@ -55,25 +57,25 @@ export default function SignUpForm() {
       setEmail("");
       setUserData({ ...userData, email: formData.email });
     } else {
-      setError(true)
-      setEmail("Enter a valid email address")
+      setError(true);
+      setEmail("Enter a valid email address");
     }
 
     if (formData.password.length < 6) {
-      setPassword("Enter your password")
+      setPassword("Enter your password");
     } else if (formData.password === formData.confirmPassword) {
       setPassword("");
-      setUserData({ ...userData, password: formData.password })
+      setUserData({ ...userData, password: formData.password });
     } else {
-      setError(true)
-      setPassword("Passwords must match")
+      setError(true);
+      setPassword("Passwords must match");
     }
 
     if (password === "" && email === "" && userName === "") {
-      setError(false)
+      setError(false);
+      setSuccess(true)
     }
   };
-
 
   return (
     <div className="layout">
@@ -82,7 +84,6 @@ export default function SignUpForm() {
         password={password}
         email={email}
         error={error}
-      
       />
       <div className="form-container">
         <h1>Create account</h1>
@@ -149,6 +150,15 @@ export default function SignUpForm() {
           Already have an account? Then go to the real Amazon page.
         </div>
       </div>
+      {success ?
+        <div>
+          <h3>Account created!</h3>
+          <div>
+            <p>Name: {formData.username}</p>
+            <p>Email: {formData.password}</p>
+            <p>Password: {formData.email}</p>
+          </div>
+        </div> : ""}
     </div>
   );
 }
