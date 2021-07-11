@@ -44,7 +44,7 @@ export default function SignUpForm() {
     e.preventDefault();
 
     if (formData.username.length === 0 || formData.username === "") {
-      setUserName("Please enter your name");
+      setUserName("Enter your name");
       setError(true)
     } else {
       setUserName("");
@@ -56,17 +56,17 @@ export default function SignUpForm() {
       setUserData({ ...userData, email: formData.email });
     } else {
       setError(true)
-      setEmail("Please enter a valid email address")
+      setEmail("Enter a valid email address")
     }
 
     if (formData.password.length < 6) {
-      setPassword("Please enter a valad password")
+      setPassword("Enter your password")
     } else if (formData.password === formData.confirmPassword) {
       setPassword("");
       setUserData({ ...userData, password: formData.password })
     } else {
       setError(true)
-      setPassword("Please make sure your passwords match")
+      setPassword("Passwords must match")
     }
 
     if (password === "" && email === "" && userName === "") {

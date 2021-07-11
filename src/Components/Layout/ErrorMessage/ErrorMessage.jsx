@@ -19,10 +19,10 @@ export default function ErrorMessage(props) {
               </div>
             </div>
             <div>
-              <h4 className="warning">There was a problem</h4>
-              <p className="warning-message">-{props.user}</p>
-              <p className="warning-message">-{props.password}</p>
-              <p className="warning-message">-{props.email}</p>
+              <p className="warning">There was a problem</p>
+              {!props.user? " " : <li className="warning-message">{props.user}</li> }
+              {!props.password? " " : <li className="warning-message">{props.password}</li> }
+              {!props.email? " " : <li className="warning-message">{props.email}</li> }
             </div>
           </>
         ) : (
